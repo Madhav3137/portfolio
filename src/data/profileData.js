@@ -42,7 +42,7 @@ export const profileData = {
   // Socials and Contact Channels
   socials: {
     email: "madhavkansal75@gmail.com",
-    github: "https://github.com/madhavkansal",
+    github: "https://github.com/Madhav3137",
     linkedin: "https://linkedin.com/in/madhavkansal",
     instagram: "https://instagram.com/madhav._.kansal",
     resumeUrl: "#contact" // Can be replaced with direct PDF link e.g. "/resume.pdf"

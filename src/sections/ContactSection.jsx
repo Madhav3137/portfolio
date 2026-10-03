@@ -121,7 +121,7 @@ export function ContactSection() {
                   <span className="font-pixel text-[8px] text-slate-400 block uppercase">
                     CODE REPOSITORIES
                   </span>
-                  <span>github.com/madhavkansal</span>
+                  <span>github.com/Madhav3137</span>
                 </div>
               </a>
 

@@ -11,8 +11,8 @@ export const projectsData = [
     techStack: ["Python", "Machine Learning", "Isolation Forest", "Data Analysis", "AI", "Matplotlib", "Pandas"],
     accentColor: "#ff007f",
     badge: "AI + DEFENSE",
-    githubUrl: "https://github.com/madhavkansal/ai-insider-threat-detection",
-    demoUrl: "https://github.com/madhavkansal/ai-insider-threat-detection#demo",
+    githubUrl: "https://github.com/Madhav3137/ai-insider-threat-detection",
+    demoUrl: "https://github.com/Madhav3137/ai-insider-threat-detection#demo",
 
     // Core Features
     features: [
@@ -90,8 +90,8 @@ export const projectsData = [
     techStack: ["ESP32", "Arduino IDE", "C++", "Blynk IoT", "MQ-2 Gas Sensor", "Flame Sensor", "Servo Actuator"],
     accentColor: "#ffb703",
     badge: "IoT & HARDWARE",
-    githubUrl: "https://github.com/madhavkansal/smart-kitchen-iot",
-    demoUrl: "https://github.com/madhavkansal/smart-kitchen-iot#schematics",
+    githubUrl: "https://github.com/Madhav3137/smart-kitchen-iot",
+    demoUrl: "https://github.com/Madhav3137/smart-kitchen-iot#schematics",
 
     features: [
       "MQ-2 gas/LPG leak detection with calibrated PPM safety thresholds",
@@ -129,8 +129,8 @@ export const projectsData = [
     techStack: ["Python", "Nmap Engine", "Socket API", "React.js", "Scapy", "REST API", "Tailwind/CSS"],
     accentColor: "#39ff14",
     badge: "CYBER RECON",
-    githubUrl: "https://github.com/madhavkansal/network-discovery-dashboard",
-    demoUrl: "https://github.com/madhavkansal/network-discovery-dashboard#preview",
+    githubUrl: "https://github.com/Madhav3137/network-discovery-dashboard",
+    demoUrl: "https://github.com/Madhav3137/network-discovery-dashboard#preview",
 
     features: [
       "Automated subnet host discovery utilizing ARP sweep and ICMP ping echoes",
