@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <!-- 32x32 Pixel Art Cyber Shield Favicon -->
+  <rect width="32" height="32" fill="#0c0d14" rx="4" />
+  <!-- Outer border -->
+  <rect x="2" y="2" width="28" height="2" fill="#00ffcc" />
+  <rect x="2" y="28" width="28" height="2" fill="#00ffcc" />
+  <rect x="2" y="2" width="2" height="28" fill="#00ffcc" />
+  <rect x="28" y="2" width="2" height="28" fill="#00ffcc" />
+  <!-- Cyber Terminal Symbol '>_' in Pixel Art -->
+  <!-- '>' prompt -->
+  <rect x="6" y="8" width="2" height="2" fill="#39ff14" />
+  <rect x="8" y="10" width="2" height="2" fill="#39ff14" />
+  <rect x="10" y="12" width="2" height="2" fill="#39ff14" />
+  <rect x="12" y="14" width="2" height="4" fill="#39ff14" />
+  <rect x="10" y="18" width="2" height="2" fill="#39ff14" />
+  <rect x="8" y="20" width="2" height="2" fill="#39ff14" />
+  <rect x="6" y="22" width="2" height="2" fill="#39ff14" />
+  <!-- M logo for Madhav -->
+  <rect x="16" y="10" width="2" height="12" fill="#ff007f" />
+  <rect x="18" y="12" width="2" height="2" fill="#ff007f" />
+  <rect x="20" y="14" width="2" height="2" fill="#ff007f" />
+  <rect x="22" y="12" width="2" height="2" fill="#ff007f" />
+  <rect x="24" y="10" width="2" height="12" fill="#ff007f" />
+  <!-- Underscore cursor -->
+  <rect x="16" y="24" width="10" height="2" fill="#00e5ff" />
+</svg>

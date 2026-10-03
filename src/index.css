@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  --font-pixel: "Press Start 2P", monospace;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-vt: "VT323", monospace;
+}
+
+:root {
+  --bg-primary: #090b14;
+  --bg-secondary: #0f1322;
+  --accent-cyan: #00e5ff;
+  --accent-magenta: #ff007f;
+  --accent-green: #39ff14;
+  --accent-gold: #ffb703;
+}
+
+/* Global Reset & Crisp Pixel Rendering */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #080a12;
+  color: #f1f5f9;
+  font-family: 'JetBrains Mono', monospace;
+  overflow-x: hidden;
+  cursor: url('/cursor-character.svg') 1 1, auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #080a12;
+  overflow-x: hidden;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  cursor: url('/cursor-character.svg') 1 1, auto;
+}
+
+button, a, [role="button"], input[type="submit"], .cursor-pointer {
+  cursor: url('/cursor-pointer.svg') 6 2, pointer !important;
+}
+
+/* Pixel Font Utility Classes */
+.font-pixel {
+  font-family: 'Press Start 2P', monospace;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.font-vt {
+  font-family: 'VT323', monospace;
+}
+
+/* Retro Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090c16;
+  border-left: 2px solid #161e32;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2945;
+  border: 2px solid #000;
+  box-shadow: inset 1px 1px 0px #38bdf8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00e5ff;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #090c16;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #253356;
+}
+
+/* Retro Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.15s ease-out forwards;
+}
+
+/* Pixelated Borders */
+.pixel-border-cyan {
+  border: 2px solid #00e5ff;
+  box-shadow: 4px 4px 0px #000;
+}
+
+.pixel-border-magenta {
+  border: 2px solid #ff007f;
+  box-shadow: 4px 4px 0px #000;
+}
+
+.pixel-border-green {
+  border: 2px solid #39ff14;
+  box-shadow: 4px 4px 0px #000;
+}

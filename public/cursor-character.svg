@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <!-- 8-Bit Cyber Arrow Pointer -->
+  <polygon points="0,0 0,16 4,12 8,20 11,19 7,11 12,11" fill="#00e5ff" stroke="#000000" stroke-width="1.5" />
+
+  <!-- 2D Mini Pixel Character (Madhav) Companion on Cursor -->
+  <!-- Quiff / Styled Pompadour Hair -->
+  <rect x="15" y="2" width="12" height="4" fill="#18181d" />
+  <rect x="17" y="0" width="9" height="3" fill="#2d2c36" />
+  <rect x="20" y="0" width="4" height="1" fill="#3c3b47" />
+
+  <!-- Head Base / Skin Tone -->
+  <rect x="15" y="6" width="12" height="8" fill="#f0c29b" />
+  <rect x="14" y="8" width="2" height="4" fill="#e5ad85" />
+  <rect x="26" y="8" width="2" height="4" fill="#e5ad85" />
+
+  <!-- Eyebrows -->
+  <rect x="16" y="7" width="3" height="1" fill="#141416" />
+  <rect x="22" y="7" width="3" height="1" fill="#141416" />
+
+  <!-- Clear Square-Round Glasses with Blue Glare -->
+  <rect x="15" y="8" width="4" height="4" fill="#60a5fa" fill-opacity="0.3" stroke="#cbd5e1" stroke-width="0.75" />
+  <rect x="16" y="9" width="1.5" height="1.5" fill="#93c5fd" />
+  <rect x="19" y="9" width="3" height="0.75" fill="#cbd5e1" />
+  <rect x="22" y="8" width="4" height="4" fill="#60a5fa" fill-opacity="0.3" stroke="#cbd5e1" stroke-width="0.75" />
+  <rect x="23" y="9" width="1.5" height="1.5" fill="#93c5fd" />
+
+  <!-- Eyes behind glasses -->
+  <rect x="17" y="9" width="1" height="2" fill="#18181d" />
+  <rect x="24" y="9" width="1" height="2" fill="#18181d" />
+
+  <!-- Trimmed Mustache & Chin Beard -->
+  <rect x="18" y="12" width="5" height="1" fill="#232128" />
+  <rect x="18" y="13.5" width="5" height="1.5" fill="#232128" />
+
+  <!-- Chitkara University Maroon Polo Shirt -->
+  <rect x="13" y="15" width="16" height="7" fill="#8c1825" />
+  {/* Collar */}
+  <polygon points="17,15 20,17 18,15" fill="#72121e" />
+  <polygon points="24,15 21,17 23,15" fill="#72121e" />
+  {/* Button & logo */}
+  <rect x="20" y="16" width="1" height="2" fill="#ef4444" />
+  <rect x="23" y="17" width="3" height="1" fill="#ffffff" />
+</svg>

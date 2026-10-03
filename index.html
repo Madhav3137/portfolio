@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Madhav Kansal | Cybersecurity & Full Stack Developer | 2D Pixel Portfolio</title>
+    
+    <!-- Meta & SEO Tags -->
+    <meta name="description" content="Explore Madhav Kansal's interactive 2D pixel-art developer quest. 3rd-year CSE student at Chitkara University (CGPA 9.67) specializing in Cybersecurity and Full Stack Development." />
+    <meta name="keywords" content="Madhav Kansal, Portfolio, Cybersecurity, Full Stack Developer, React, Python, IoT, Machine Learning, Chitkara University" />
+    <meta name="author" content="Madhav Kansal" />
+    <meta name="theme-color" content="#0d0e15" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Madhav Kansal | Cybersecurity & Full Stack Developer | 2D Pixel Portfolio" />
+    <meta property="og:description" content="Interactive 2D pixel-art RPG developer portfolio, quests, inventory, and missions." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/favicon.svg" />
+
+    <!-- Google Fonts for Retro Pixel & Monospace Aesthetics -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;1,400&family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+  </head>
+  <body style="margin: 0; background-color: #080a12; color: #f1f5f9; min-height: 100vh;">
+    <div id="root">
+      <div style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; color: #00e5ff; background-color: #080a12; text-align: center; padding: 20px;">
+        <div style="font-size: 16px; margin-bottom: 12px; letter-spacing: 2px;">INITIALIZING CYBERSPACE...</div>
+        <div id="init-status" style="color: #64748b; font-size: 12px;">LOADING 2D RETRO ASSETS</div>
+      </div>
+    </div>
+    <script>
+      (function() {
+        var root = document.getElementById('root');
+
+        // Check if user accidentally opened index.html directly from filesystem (file:///)
+        if (window.location.protocol === 'file:') {
+          if (root) {
+            root.innerHTML = '<div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#090b14;color:#ffb703;padding:30px;font-family:\'JetBrains Mono\',monospace;text-align:center;">' +
+              '<div style="font-size:24px;margin-bottom:12px;">⚠️ LOCAL PROTOCOL DETECTED</div>' +
+              '<p style="color:#f1f5f9;font-size:15px;max-width:540px;line-height:1.6;margin-bottom:20px;">' +
+              'You opened <code>index.html</code> directly from your disk (<code>file:///</code>). Modern React & Vite applications require an active local HTTP server.' +
+              '</p>' +
+              '<div style="background:#111728;border:2px solid #00e5ff;padding:16px 24px;color:#00e5ff;font-size:14px;box-shadow:4px 4px 0px #000;margin-bottom:20px;">' +
+              '1. In terminal run: <b>npm run dev</b><br>' +
+              '2. Open browser to: <b><a href="http://localhost:3000" style="color:#39ff14;text-decoration:underline;">http://localhost:3000</a></b>' +
+              '</div>' +
+              '</div>';
+          }
+          return;
+        }
+
+        // Global Error Listener (including script resource error capturing)
+        function displayError(title, message, stack) {
+          if (!window.__APP_MOUNTED__ && root) {
+            root.innerHTML = '<div style="background:#090b14;color:#ff0055;padding:30px;font-family:monospace;min-height:100vh;box-sizing:border-box;">' +
+              '<h2 style="color:#00e5ff;">' + (title || 'Runtime Error') + '</h2>' +
+              '<p style="color:#fff;font-size:15px;line-height:1.5;">' + (message || 'An error occurred while loading cyberspace.') + '</p>' +
+              (stack ? '<pre style="background:#131826;color:#ffb703;padding:15px;overflow:auto;border:1px solid #1f293d;max-height:300px;">' + stack + '</pre>' : '') +
+              '<button onclick="location.reload()" style="margin-top:16px;padding:10px 18px;background:#00e5ff;color:#000;font-weight:bold;border:2px solid #000;cursor:pointer;">[ ⟳ RELOAD PAGE ]</button>' +
+              '</div>';
+          }
+        }
+
+        window.addEventListener('error', function(e) {
+          if (e.target && e.target.tagName === 'SCRIPT') {
+            displayError('Module Load Error', 'Failed to load script module: ' + (e.target.src || 'unknown script') + '. Please ensure Vite dev server is running on http://localhost:3000.');
+          } else {
+            displayError('JavaScript Runtime Error', e.message, e.error && e.error.stack ? e.error.stack : (e.filename + ':' + e.lineno + ':' + e.colno));
+          }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(e) {
+          var reason = e.reason;
+          displayError('Unhandled Promise Rejection', (reason && reason.message) ? reason.message : String(reason), reason && reason.stack ? reason.stack : '');
+        });
+
+        // Watchdog: If React hasn't mounted after 4 seconds, offer actionable retry
+        setTimeout(function() {
+          if (!window.__APP_MOUNTED__) {
+            var indicator = document.getElementById('init-status');
+            if (indicator) {
+              indicator.innerHTML = '<div style="margin-top:12px;color:#ffb703;font-size:12px;">Connecting to Vite Server...</div>' +
+                '<button onclick="location.reload()" style="margin-top:14px;padding:6px 14px;background:#141c2e;color:#00e5ff;border:1px solid #00e5ff;font-family:inherit;font-size:11px;cursor:pointer;box-shadow:2px 2px 0 #000;">[ ⟳ RETRY ]</button>';
+            }
+          }
+        }, 4000);
+      })();
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
