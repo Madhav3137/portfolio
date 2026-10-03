@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-export function ParticleCanvas() {
+export function ParticleCanvas({ theme = 'dark' }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -23,7 +23,9 @@ export function ParticleCanvas() {
     // Generate small square pixel dust particles
     const particleCount = Math.min(45, Math.floor(width / 30));
     const particles = [];
-    const colors = ['#00e5ff', '#39ff14', '#ff007f', '#ffb703', '#ffffff'];
+    const colors = theme === 'light'
+      ? ['#0284c7', '#059669', '#d81b60', '#d97706', '#475569']
+      : ['#00e5ff', '#39ff14', '#ff007f', '#ffb703', '#ffffff'];
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
@@ -33,7 +35,7 @@ export function ParticleCanvas() {
         speedY: -(0.2 + Math.random() * 0.4),
         speedX: (Math.random() - 0.5) * 0.2,
         color: colors[Math.floor(Math.random() * colors.length)],
-        alpha: 0.15 + Math.random() * 0.45
+        alpha: theme === 'light' ? 0.2 + Math.random() * 0.4 : 0.15 + Math.random() * 0.45
       });
     }
 
@@ -68,7 +70,7 @@ export function ParticleCanvas() {
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationId);
     };
-  }, []);
+  }, [theme]);
 
   return (
     <canvas

@@ -22,6 +22,22 @@ export function App() {
   const [crtEnabled, setCrtEnabled] = useState(true);
   const [terminalOpen, setTerminalOpen] = useState(false);
   const [konamiOpen, setKonamiOpen] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    try {
+      return localStorage.getItem('pixel_portfolio_theme') || 'dark';
+    } catch {
+      return 'dark';
+    }
+  });
+
+  // Toggle Theme (Dark <-> Light)
+  const handleToggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    try {
+      localStorage.setItem('pixel_portfolio_theme', nextTheme);
+    } catch {}
+  };
 
   // Toggle SFX
   const handleToggleSfx = () => {
@@ -77,12 +93,16 @@ export function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#080a12] text-slate-200 relative selection:bg-[#00e5ff] selection:text-black overflow-x-hidden">
+    <div
+      className={`min-h-screen relative selection:bg-[#00e5ff] selection:text-black overflow-x-hidden transition-colors duration-200 ${
+        theme === 'light' ? 'theme-light bg-[#f1f5f9] text-slate-800' : 'bg-[#080a12] text-slate-200'
+      }`}
+    >
       {/* Background Pixel Dust Stars */}
-      <ParticleCanvas />
+      <ParticleCanvas theme={theme} />
 
       {/* Optional CRT Scanlines Filter */}
-      <CRTOverlay enabled={crtEnabled} />
+      <CRTOverlay enabled={crtEnabled} theme={theme} />
 
       {/* Retro Navigation HUD */}
       <PixelNavbar
@@ -92,6 +112,8 @@ export function App() {
         crtEnabled={crtEnabled}
         onToggleCrt={handleToggleCrt}
         onOpenTerminal={() => setTerminalOpen(true)}
+        theme={theme}
+        onToggleTheme={handleToggleTheme}
       />
 
       {/* Main Game World Content */}

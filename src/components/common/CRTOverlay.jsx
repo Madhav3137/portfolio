@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function CRTOverlay({ enabled = true }) {
+export function CRTOverlay({ enabled = true, theme = 'dark' }) {
   if (!enabled) return null;
 
   return (
@@ -10,19 +10,24 @@ export function CRTOverlay({ enabled = true }) {
     >
       {/* Subtle Horizontal Scanlines */}
       <div
-        className="w-full h-full opacity-35"
+        className={`w-full h-full ${theme === 'light' ? 'opacity-15' : 'opacity-35'}`}
         style={{
           backgroundImage:
-            'linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.45) 50%)',
+            theme === 'light'
+              ? 'linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.2) 50%)'
+              : 'linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.45) 50%)',
           backgroundSize: '100% 3px'
         }}
       />
 
       {/* Subtle CRT Vignette / Screen Curvature */}
       <div
-        className="absolute inset-0 opacity-40"
+        className={`absolute inset-0 ${theme === 'light' ? 'opacity-20' : 'opacity-40'}`}
         style={{
-          boxShadow: 'inset 0 0 100px rgba(0,0,0,0.8), inset 0 0 40px rgba(0,229,255,0.05)'
+          boxShadow:
+            theme === 'light'
+              ? 'inset 0 0 80px rgba(0,0,0,0.3)'
+              : 'inset 0 0 100px rgba(0,0,0,0.8), inset 0 0 40px rgba(0,229,255,0.05)'
         }}
       />
     </div>

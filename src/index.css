@@ -121,3 +121,128 @@ button, a, [role="button"], input[type="submit"], .cursor-pointer {
   border: 2px solid #39ff14;
   box-shadow: 4px 4px 0px #000;
 }
+
+/* ==========================================================
+   RETRO CYBER LIGHT MODE (Game Boy Light / Arcade Matrix)
+   ========================================================== */
+.theme-light {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+.theme-light header {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  border-bottom-color: #cbd5e1 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05) !important;
+}
+
+.theme-light header nav button {
+  color: #475569 !important;
+}
+
+.theme-light header nav button:hover {
+  color: #0f172a !important;
+  background-color: #f1f5f9 !important;
+}
+
+.theme-light [class*="bg-[#0b0e1b]"],
+.theme-light [class*="bg-[#0c0f19]"],
+.theme-light [class*="bg-[#0c101d]"],
+.theme-light [class*="bg-[#0c1120]"],
+.theme-light [class*="bg-[#0a0d16]"],
+.theme-light [class*="bg-[#0a0f1d]"],
+.theme-light [class*="bg-[#0c0f1b]"],
+.theme-light [class*="bg-[#05070d]"] {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 4px 4px 0px #cbd5e1 !important;
+}
+
+.theme-light [class*="bg-[#101526]"],
+.theme-light [class*="bg-[#121626]"],
+.theme-light [class*="bg-[#101726]"],
+.theme-light [class*="bg-[#131b2e]"],
+.theme-light [class*="bg-[#12182b]"],
+.theme-light [class*="bg-[#151f38]"],
+.theme-light [class*="bg-[#111627]"],
+.theme-light [class*="bg-[#0e1324]"],
+.theme-light [class*="bg-[#12192e]"] {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+.theme-light [class*="bg-[#080b15]"],
+.theme-light [class*="bg-[#070912]"],
+.theme-light [class*="bg-[#0c0f1d]"] {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+.theme-light [class*="border-[#1c2438]"],
+.theme-light [class*="border-[#1a233b]"],
+.theme-light [class*="border-[#1c2640]"],
+.theme-light [class*="border-[#1e2a47]"],
+.theme-light [class*="border-[#192238]"],
+.theme-light [class*="border-[#1f2942]"],
+.theme-light [class*="border-[#232f4f]"],
+.theme-light [class*="border-[#161e32]"],
+.theme-light [class*="border-[#202d4d]"],
+.theme-light [class*="border-[#162038]"],
+.theme-light [class*="border-[#1e273f]"] {
+  border-color: #cbd5e1 !important;
+}
+
+.theme-light [class*="text-white"] {
+  color: #0f172a !important;
+}
+
+.theme-light [class*="text-slate-200"],
+.theme-light [class*="text-slate-300"] {
+  color: #1e293b !important;
+}
+
+.theme-light [class*="text-slate-400"] {
+  color: #475569 !important;
+}
+
+.theme-light [class*="text-slate-500"] {
+  color: #64748b !important;
+}
+
+.theme-light [class*="text-[#00e5ff]"] {
+  color: #0284c7 !important;
+}
+
+.theme-light [class*="text-[#39ff14]"] {
+  color: #15803d !important;
+}
+
+.theme-light [class*="text-[#ff007f]"] {
+  color: #be123c !important;
+}
+
+.theme-light [class*="text-[#ffb703]"] {
+  color: #b45309 !important;
+}
+
+.theme-light footer {
+  background-color: #f8fafc !important;
+  border-top-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+.theme-light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-left: 2px solid #cbd5e1;
+}
+
+.theme-light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border: 2px solid #94a3b8;
+}
+
+.theme-light ::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
+

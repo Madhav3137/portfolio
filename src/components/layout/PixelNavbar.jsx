@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, VolumeX, Tv, Terminal, Menu, X } from 'lucide-react';
+import { Volume2, VolumeX, Tv, Terminal, Menu, X, Sun, Moon } from 'lucide-react';
 import { soundManager } from '../../utils/soundEffects';
 
 export function PixelNavbar({
@@ -8,7 +8,9 @@ export function PixelNavbar({
   onToggleSfx,
   crtEnabled,
   onToggleCrt,
-  onOpenTerminal
+  onOpenTerminal,
+  theme = 'dark',
+  onToggleTheme
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -173,6 +175,26 @@ export function PixelNavbar({
             {sfxMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
           </button>
 
+          {/* Light / Dark Mode Theme Toggle Button */}
+          <button
+            onClick={() => {
+              soundManager.playSelect();
+              if (onToggleTheme) onToggleTheme();
+            }}
+            title={theme === 'light' ? "Switch to Cyber Dark Mode" : "Switch to Cyber Light Mode"}
+            aria-label="Toggle Light/Dark Theme"
+            className={`
+              p-1.5 border font-pixel text-[9px] transition-colors shadow-[2px_2px_0px_#000] cursor-pointer
+              ${
+                theme === 'light'
+                  ? 'bg-[#ffb703] text-black border-black font-bold hover:bg-[#e0a000]'
+                  : 'bg-[#101422] text-[#ffb703] border-[#252f4a] hover:border-[#ffb703] hover:text-white'
+              }
+            `}
+          >
+            {theme === 'light' ? <Moon className="w-3.5 h-3.5" /> : <Sun className="w-3.5 h-3.5" />}
+          </button>
+
           {/* Mobile Menu Hamburger */}
           <button
             onClick={() => {
@@ -190,7 +212,7 @@ export function PixelNavbar({
       {/* Mobile Dropdown Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t-2 border-[#192238] bg-[#0c0f1d] px-4 py-3 shadow-[0_10px_20px_rgba(0,0,0,0.9)] animate-fadeIn">
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 gap-2 mb-3">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
@@ -210,6 +232,32 @@ export function PixelNavbar({
                 </button>
               );
             })}
+          </div>
+
+          {/* Mobile Quick Action: Theme Switch */}
+          <div className="pt-2 border-t border-[#1c263f] flex items-center justify-between">
+            <span className="font-pixel text-[8.5px] text-slate-400">
+              THEME: <span className="text-[#ffb703] uppercase font-bold">{theme}</span>
+            </span>
+            <button
+              onClick={() => {
+                soundManager.playSelect();
+                if (onToggleTheme) onToggleTheme();
+              }}
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-[#12182a] border border-[#ffb703] text-[#ffb703] font-pixel text-[8.5px] shadow-[2px_2px_0_#000] cursor-pointer"
+            >
+              {theme === 'light' ? (
+                <>
+                  <Moon className="w-3 h-3" />
+                  <span>DARK MODE</span>
+                </>
+              ) : (
+                <>
+                  <Sun className="w-3 h-3" />
+                  <span>LIGHT MODE</span>
+                </>
+              )}
+            </button>
           </div>
         </div>
       )}
