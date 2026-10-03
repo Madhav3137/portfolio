@@ -205,7 +205,7 @@ export function TerminalModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/85 backdrop-blur-md animate-fadeIn select-none">
+    <div className="fixed inset-0 z-[70] flex items-center justify-center p-2 sm:p-4 bg-black/85 backdrop-blur-md animate-fadeIn select-none">
       <div
         className={`
           flex flex-col bg-[#05070d] border-2 border-[#39ff14] shadow-[8px_8px_0px_#000]

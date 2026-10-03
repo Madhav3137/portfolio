@@ -55,14 +55,15 @@ export function App() {
     const sections = ['home', 'about', 'skills', 'projects', 'experience', 'education', 'contact'];
 
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200;
+      // Viewport-relative trigger for accurate indexing across mobile phone and desktop screens
+      const triggerY = Math.max(80, window.innerHeight * 0.35);
 
-      for (const sectionId of sections) {
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sectionId = sections[i];
         const element = document.getElementById(sectionId);
         if (element) {
-          const top = element.offsetTop;
-          const height = element.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= triggerY) {
             setActiveSection(sectionId);
             break;
           }
@@ -71,6 +72,7 @@ export function App() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

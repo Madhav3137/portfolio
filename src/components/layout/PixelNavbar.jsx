@@ -56,7 +56,7 @@ export function PixelNavbar({
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 bg-[#090c16]/95 backdrop-blur-md border-b-2 border-[#192238] select-none">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#090c16]/95 backdrop-blur-md border-b-2 border-[#192238] select-none">
       {/* Top EXP Progress Bar */}
       <div className="w-full h-1 bg-[#101726]">
         <div

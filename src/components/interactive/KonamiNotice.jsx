@@ -6,7 +6,7 @@ export function KonamiNotice({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn select-none">
+    <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn select-none">
       <div className="relative w-full max-w-md bg-[#0a0f1d] border-4 border-[#ffb703] p-6 text-center shadow-[10px_10px_0px_#000]">
         {/* Pixel corners */}
         <span className="absolute -top-2 -left-2 w-4 h-4 bg-black border-2 border-[#ffb703]" />
