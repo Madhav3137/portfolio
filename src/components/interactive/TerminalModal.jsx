@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Terminal as TerminalIcon, Maximize2, Minimize2 } from 'lucide-react';
 import { profileData } from '../../data/profileData';
 import { projectsData } from '../../data/projectsData';
@@ -204,14 +205,18 @@ export function TerminalModal({ isOpen, onClose }) {
     error: 'text-[#ff0055]'
   };
 
-  return (
-    <div className="fixed inset-0 z-[70] flex items-center justify-center p-2 sm:p-4 bg-black/85 backdrop-blur-md animate-fadeIn select-none">
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-2 sm:p-4 pt-16 sm:pt-4 bg-black/85 backdrop-blur-md animate-fadeIn select-none"
+      onClick={onClose}
+    >
       <div
         className={`
           flex flex-col bg-[#05070d] border-2 border-[#39ff14] shadow-[8px_8px_0px_#000]
           transition-all duration-200
-          ${isMaximized ? 'w-full h-full' : 'w-full max-w-2xl h-[480px]'}
+          ${isMaximized ? 'w-full h-full' : 'w-full max-w-2xl h-[480px] max-h-[85vh]'}
         `}
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Terminal Header */}
         <div className="flex items-center justify-between px-3 py-2 bg-[#0d1612] border-b-2 border-[#163826]">
@@ -279,6 +284,7 @@ export function TerminalModal({ isOpen, onClose }) {
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

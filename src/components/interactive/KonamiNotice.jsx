@@ -1,13 +1,20 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 import { Award, Sparkles } from 'lucide-react';
 import { soundManager } from '../../utils/soundEffects';
 
 export function KonamiNotice({ isOpen, onClose }) {
   if (!isOpen) return null;
 
-  return (
-    <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn select-none">
-      <div className="relative w-full max-w-md bg-[#0a0f1d] border-4 border-[#ffb703] p-6 text-center shadow-[10px_10px_0px_#000]">
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn select-none"
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-md bg-[#0a0f1d] border-4 border-[#ffb703] p-6 text-center shadow-[10px_10px_0px_#000]"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Pixel corners */}
         <span className="absolute -top-2 -left-2 w-4 h-4 bg-black border-2 border-[#ffb703]" />
         <span className="absolute -top-2 -right-2 w-4 h-4 bg-black border-2 border-[#ffb703]" />
@@ -56,6 +63,7 @@ export function KonamiNotice({ isOpen, onClose }) {
           [ CLAIM GLORY & RESUME ]
         </button>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

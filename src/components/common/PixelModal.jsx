@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { soundManager } from '../../utils/soundEffects';
 
 export function PixelModal({
@@ -31,12 +32,15 @@ export function PixelModal({
 
   if (!isOpen) return null;
 
-  return (
-    <div className="fixed inset-0 z-[70] flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-5 pt-16 sm:pt-6 bg-black/85 backdrop-blur-sm animate-fadeIn"
+      onClick={onClose}
+    >
       {/* Modal Container */}
       <div
         className={`
-          relative w-full ${maxWidth} max-h-[90vh] flex flex-col
+          relative w-full ${maxWidth} max-h-[85vh] flex flex-col
           bg-[#0a0d16] border-2 border-[#1e273f]
           shadow-[8px_8px_0px_#000]
         `}
@@ -95,6 +99,7 @@ export function PixelModal({
           {children}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
