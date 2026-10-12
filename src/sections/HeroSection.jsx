@@ -44,7 +44,7 @@ export function HeroSection({ onOpenTerminal }) {
 
           {/* Main Greeting */}
           <h1 className="font-pixel text-2xl sm:text-3xl md:text-4xl text-white tracking-wider mb-4 leading-snug">
-            Hi, I'm <span className="text-[#00e5ff] drop-shadow-[0_0_12px_rgba(0,229,255,0.4)]">Madhav</span> 👋
+            Hi, I'm <span className="text-[#00e5ff] drop-shadow-[0_0_12px_rgba(0,229,255,0.4)]">Madhav Kansal</span> 👋
           </h1>
 
           {/* Role Subtitle */}

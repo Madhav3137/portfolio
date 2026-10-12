@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://madhavkansal-portfolio.vercel.app/sitemap.xml
+Sitemap: https://madhav-portfolio.vercel.app/sitemap.xml
